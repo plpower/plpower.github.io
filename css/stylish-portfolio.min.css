@@ -44,12 +44,12 @@
  .menu-toggle:hover{background:#343a40}
  .service-icon{background-color:#fff;color: rgba(135, 199, 232, 0.886);height:7rem;width:7rem;display:block;line-height:7.5rem;font-size:2.25rem;-webkit-box-shadow:0 3px 3px 0 rgba(0,0,0,.1);box-shadow:0 3px 3px 0 rgba(0,0,0,.1)}
  
- .callout{min-height:30rem;position:relative; height:100%;padding-top:8rem; padding-bottom:8rem; background:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.1)));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
- .callout h1{text-align:left; padding-left:20rem; padding-right:20rem}
+ .callout{min-height:30rem;position:relative; height:auto;padding-top:8rem; padding-bottom:8rem; background:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,.1)),to(rgba(255,255,255,.1)));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
+ .callout h1{text-align:left; padding-left:25%; padding-right:25%}
  .callout h2{font-size:3.5rem;font-weight:700;display:block;max-width:30rem; text-align: left}
- .callout p{max-width:100%; text-align:left; padding-left:20rem; padding-right:20rem}
- .callout a{max-width:50%; text-align:left; padding-left:20rem; padding-right:20rem}
- .callout ul{max-width:100%; text-align:left; padding-left:23rem; padding-right:20rem}
+ .callout p{max-width:100%; text-align:left; padding-left:25%; padding-right:25%}
+ .callout a{max-width:50%; text-align:left; padding-left:25%; padding-right:25%}
+ .callout ul{max-width:100%; text-align:left; padding-left:30%; padding-right:25%}
  
  .portfolio-item{display:block;position:relative;overflow:hidden;max-width:530px;margin:auto auto 1rem}
  .portfolio-item .caption{display:-webkit-box;display:-ms-flexbox;display:flex;height:100%;width:100%;background-color:rgba(33,37,41,.2);position:absolute;top:0;bottom:0;z-index:1}
@@ -131,17 +131,17 @@
  .text-secondary{color: rgba(135, 199, 232, 0.886)!important}
 
  .edc{min-height:30rem;position:relative; height:100%;padding-top:0; padding-bottom:8rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
- .edc h1{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0; padding-top:0rem;font-weight:500; font-size:1.5rem}
+ .edc h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0; padding-top:0rem;font-weight:500; font-size:1.5rem}
  .edc h2{font-size:3.5rem;font-weight:700;display:block;max-width:30rem; text-align: left}
- .edc h4{max-width:100%; text-align:left; padding-left:10rem; padding-right:10rem; font-size:1rem; font-weight:400}
- .edc p{max-width:100%; text-align:center; padding-left:10rem; padding-right:10rem; padding-bottom:1rem}
+ .edc h4{max-width:100%; text-align:left; padding-left:13%; padding-right:13%; font-size:1rem; font-weight:400}
+ .edc p{max-width:100%; text-align:center; padding-bottom:1rem}
  .edc a{max-width:50%; text-align:left}
- .edc ul{max-width:100%; text-align:left; padding-left:13rem; padding-right:10rem}
+ .edc ul{max-width:100%; text-align:left; padding-left:18%; padding-right:13%}
  .emasthead{min-height:10rem;position:relative;display:table;width:100%;height:10%;padding-top:7rem;padding-bottom:0rem;background:-webkit-gradient(linear,left top,right top,from(#F8F9FB),to(#F8F9FB)),url(../img/edcheader.jpg);background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(../img/edcheader.jpg);background-position:center center;background-repeat:no-repeat;background-size:cover}
- .emasthead img{margin-left:auto; margin-right:auto}
+ .emasthead img{margin-left:auto; margin-right:auto; position:fixed}
  @media
  (min-width:400px){.emasthead{height:30vh}.emasthead h1{font-size:5.5rem}}
- .edc img{padding-left:20rem; padding-right:20rem; padding-bottom: 1rem; padding-top:2rem}
+ .edc img{padding-left:18%; padding-right:18%; padding-bottom: 1rem; padding-top:2rem}
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .edc-column {
     float: left;
@@ -161,22 +161,22 @@
 }
 .edc-row{padding-left:0rem; padding-right:0rem; padding-top:0rem}
 
-.logos{padding-top:0rem; padding-left:10rem; padding-right:10rem;}
-.logos h1{text-align:left; padding-left:0rem; padding-right:10rem; padding-bottom:0; font-weight:500; font-size:1.5rem}
+.logos{padding-top:0rem; padding-left:13%; padding-right:13%;}
+.logos h1{text-align:left; padding-left:0; padding-right:13%; padding-bottom:0; font-weight:500; font-size:1.5rem}
 
 .vnn{min-height:30rem;position:relative; object-fit:cover;display:table;height:100%;padding-top:0; padding-bottom:8rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:#F8F9FB ;background-position:center center;background-repeat:no-repeat;background-size:cover}
-.vnn h1{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
-.vnn h2{max-width:100%; text-align:left; padding-left:10rem; padding-right:10rem; font-size:1rem; font-weight:400; padding-bottom: 1rem}
-.vnn h4{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0rem; padding-top: 0rem;font-weight:500; font-size:1rem}
-.vnn p{max-width:100%; text-align:center; padding-left:10rem; padding-right:10rem}
+.vnn h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
+.vnn h2{max-width:100%; text-align:left; padding-left:13%; padding-right:13%; font-size:1rem; font-weight:400; padding-bottom: 1rem}
+.vnn h4{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0rem; padding-top: 0rem;font-weight:500; font-size:1rem}
+.vnn p{max-width:100%; text-align:center; padding-left:13%; padding-right:13%;}
 .vnn a{max-width:50%; text-align:left}
-.vnn ul{max-width:100%; text-align:left; padding-left:13rem; padding-right:10rem}
+.vnn ul{max-width:100%; text-align:left; padding-left:13%; padding-right:13%;}
 .vmasthead{min-height:10rem;position:relative;display:table;width:100%;height:10%;padding-top:7rem;padding-bottom:0rem;background:-webkit-gradient(linear,left top,right top,from(#F8F9FB),to(#F8F9FB)),url(../img/fnfheader.jpg);background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(../img/fnfheader.jpg);background-position:center center;background-repeat:no-repeat;background-size:cover}
 .vmasthead img{margin-left:auto; margin-right:auto}
 @media
 (min-width:400px){.emasthead{height:30vh}.emasthead h1{font-size:5.5rem}}
 .vnn img{padding-bottom: 1rem; height:30rem; position: relative; margin-left:auto; margin-right:auto; object-fit: cover; height: auto}
-.posters{padding-top:2rem; padding-left:10rem; padding-right:10rem;}
+.posters{padding-top:2rem; padding-left:13%; padding-right:13%;}
 
 .vnn-column {
     float: left;
@@ -195,8 +195,8 @@
 .vnn-column img{height:100%; width:100%;}
   /* Clear floats after image containers */
 
-.vnn-row{padding-left:10rem; padding-right:10rem; padding-top:0rem; height: auto; margin:auto}
-.vnn1-row{padding-left:11rem; padding-right:10rem; padding-top:2rem; padding-bottom:1rem; height: auto; margin:auto}
+.vnn-row{padding-left:13%; padding-right:13%; padding-top:0rem; height: auto; margin:auto}
+.vnn1-row{padding-left:14%; padding-right:13%; padding-top:2rem; padding-bottom:1rem; height: auto; margin:auto}
 
 .vnn-row::after {
     content: "";
@@ -212,7 +212,7 @@
 #carousel {
     margin-top: 50px;   
 }
-.carousel {height: 400px;margin-bottom: 0px; position:relative; background-color: #F8F9FB; width: 70%; margin:auto}
+.carousel {height: auto; margin-bottom: 0px; position:relative; background-color: #F8F9FB; width: 70%; margin:auto}
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     z-index: 10;
@@ -259,28 +259,28 @@
 
 
   .dtc1{min-height:10rem;position:relative; object-fit:cover;display:table; height:80% ;padding-top:0; padding-bottom:1rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgb(248,249,251); background-position:center center;background-repeat:no-repeat;background-size:cover}
-  .dtc1 h1{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
-  .dtc1 h2{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:1rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
-  .dtc1 h4{max-width:100%; text-align:left; padding-left:10rem; padding-right:10rem; font-size:1rem; font-weight:400}
-  .dtc1 p{max-width:100%; text-align:center; padding-left:10rem; padding-right:10rem}
+  .dtc1 h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
+  .dtc1 h2{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:1rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
+  .dtc1 h4{max-width:100%; text-align:left; padding-left:13%; padding-right:13%; font-size:1rem; font-weight:400}
+  .dtc1 p{max-width:100%; text-align:center; padding-left:13%; padding-right:13%}
   .dtc1 a{max-width:50%; text-align:left}
-  .dtc1 ul{max-width:100%; text-align:left; padding-left:13rem; padding-right:10rem}
-  .dtc1 img{padding-left:12rem; padding-right:12rem; padding-bottom: 0rem; padding-top:2rem; margin:auto; position: relative; margin-left:auto; margin-right:auto; object-fit:cover}
+  .dtc1 ul{max-width:100%; text-align:left; padding-left:18%; padding-right:13%}
+  .dtc1 img{padding-left:13%; padding-right:13%; padding-bottom: 2rem; padding-top:2rem; margin:auto; position: relative; margin-left:auto; margin-right:auto; object-fit:cover}
   .d1masthead{min-height:10rem;position:relative;display:table;width:100%;height:10%;padding-top:7rem;padding-bottom:0rem;background:-webkit-gradient(linear,left top,right top,from(#F8F9FB),to(#F8F9FB)),url(../img/d1header.jpg);background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(../img/d1header.jpg);background-position:center center;background-repeat:no-repeat;background-size:cover}
   .d1masthead img{margin-left:auto; margin-right:auto}
   
   @media
   (min-width:400px){.d1masthead{height:30vh}.d1masthead h1{font-size:5.5rem}}
   
-  .d12row{padding-left:15rem; padding-right:15rem; padding-top:2rem; padding-bottom:1rem; margin:auto; float: left;}
+  .d12row{padding-left:18%; padding-right:18%; padding-top:2rem; padding-bottom:1rem; margin:auto; float: left;}
   .d12row img{margin:auto; float:left; height:auto}
 
- .dtc1-one {min-height:10rem;position:relative; height:105%;padding-top:0; padding-bottom:0rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
- .dtc1-one h1{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0; padding-top:0rem;font-weight:500; font-size:1.5rem}
+ .dtc1-one {min-height:10rem; max-height:100%;position:relative; padding-top:0; padding-bottom:0rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
+ .dtc1-one h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0; padding-top:0rem;font-weight:500; font-size:1.5rem}
  .dtc1-one h2{font-size:3.5rem;font-weight:700;display:block;max-width:30rem; text-align: left}
- .dtc1-one h4{max-width:100%; text-align:left; padding-left:10rem; padding-right:10rem; font-size:1rem; font-weight:400}
- .dtc1-one p{max-width:100%; text-align:center; padding-left:10rem; padding-right:10rem; padding-bottom:1rem}
- .dtc1-one img{padding-left:15rem; padding-right:15rem; padding-bottom: 2rem; padding-top:2rem; margin:auto}
+ .dtc1-one h4{max-width:100%; text-align:left; padding-left:13%; padding-right:13%; font-size:1rem; font-weight:400}
+ .dtc1-one p{max-width:100%; text-align:center; padding-left:13%; padding-right:13%; padding-bottom:1rem}
+ .dtc1-one img{padding-left:25%; padding-right:25%; padding-bottom: 2rem; padding-top:2rem; margin:auto; height:auto}
 
  .dcolumn{
     float: left;
@@ -296,29 +296,29 @@
 .dcolumn p{max-width:100%; text-align:center; padding-left:0rem; padding-right:0rem; font-size:1.25rem}
 
 .caro{min-height:30rem;position:relative; object-fit:cover;display:table;height:100%; padding-bottom:0rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgb(248,249,251); background-position:center center;background-repeat:no-repeat;background-size:cover}
-.caro h1{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
-.caro p{max-width:100%; text-align:center; padding-left:10rem; padding-right:10rem; font-size:1.25rem}
+.caro h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
+.caro p{max-width:100%; text-align:center; padding-left:13%; padding-right:13%; font-size:1.25rem}
 .caro img{padding-bottom: 2rem; padding-top:0rem; margin:auto}
-.caro .carousel {height: 550px;margin-bottom: 0px; position:relative; background-color: #F8F9FB; width: 70%; margin:auto}
+.caro .carousel {height: auto;margin-bottom: 0px; position:relative; background-color: #F8F9FB; width: 70%; margin:auto}
 .caro .dcolumn{padding-left:0rem; padding-right:0rem;}
 
 
 .dtc2{min-height:30rem;position:relative; object-fit:cover;display:table;height:100%;padding-top:0; padding-bottom:8rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:#F8F9FB ;background-position:center center;background-repeat:no-repeat;background-size:cover}
-.dtc2 h1{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
-.dtc2 h2{max-width:100%; text-align:left; padding-left:10rem; padding-right:10rem; font-size:1rem; font-weight:400; padding-bottom: 1rem}
-.dtc2 h4{text-align:left; padding-left:10rem; padding-right:10rem; padding-bottom:0rem; padding-top: 0rem;font-weight:500; font-size:1rem}
-.dtc2 p{max-width:100%; text-align:center; padding-left:10rem; padding-right:10rem}
+.dtc2 h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0rem; padding-top: 1rem;font-weight:500; font-size:1.5rem}
+.dtc2 h2{max-width:100%; text-align:left; padding-left:13%; padding-right:13%; font-size:1rem; font-weight:400; padding-bottom: 1rem}
+.dtc2 h4{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0rem; padding-top: 0rem;font-weight:500; font-size:1rem}
+.dtc2 p{max-width:100%; text-align:center; padding-left:13%; padding-right:13%;}
 .dtc2 a{max-width:50%; text-align:left}
-.dtc2 ul{max-width:100%; text-align:left; padding-left:13rem; padding-right:10rem}
+.dtc2 ul{max-width:100%; text-align:left; padding-left:18%; padding-right:13%;}
 .d2masthead{min-height:10rem;position:relative;display:table;width:100%;height:10%;padding-top:7rem;padding-bottom:0rem;background:-webkit-gradient(linear,left top,right top,from(#F8F9FB),to(#F8F9FB)),url(../img/d2header.jpg);background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(../img/d2header.jpg);background-position:center center;background-repeat:no-repeat;background-size:cover}
 .d2masthead img{margin-left:auto; margin-right:auto}
 @media
 (min-width:400px){.d2masthead{height:30vh}.d2masthead h1{font-size:5.5rem}}
-.dtc2 img{padding-left:15rem; padding-right:15rem; padding-bottom: 1rem; padding-top:2rem}
+.dtc2 img{padding-left:20%; padding-right:20%; padding-bottom: 1rem; padding-top:2rem}
 .dtc2 video{width: 200px; height: 400px; object-fit: cover; margin:auto}
-.dtc2-caro img{padding-left:5rem; padding-right:5rem;}
+.dtc2-caro img{padding-left:5%; padding-right:5%;}
 .dtc2-caro{position:relative; object-fit:cover;display:table;height:15rem}
-.dtc2-caro .carousel {height: 380px;margin-bottom: 0px; position:relative;  background-color: #F8F9FB; width: 70%; margin:auto}
+.dtc2-caro .carousel {height: auto; margin-bottom: 0px; position:relative;  background-color: #F8F9FB; width: 70%; margin:auto}
 .dtc2-caro p{text-align:center; font-size:1rem; color:#444;}
 .dtc2-caro .carousel-caption {
     max-width: 100%;
@@ -332,11 +332,11 @@
     border-color: #155d74;
     height:50%;
 }
-.dcontainer-fluid img{padding-left:15rem; padding-right:15rem;}
-.d2row{padding-left:10rem; padding-right:10rem; padding-top:0rem; height: auto; margin:auto}
+.dcontainer-fluid img{padding-left:17%; padding-right:17%;}
+.d2row{padding-left:13%; padding-right:13%; padding-top:0rem; height: auto; margin:auto}
 
-.use img{padding-left:20rem; padding-right:20rem; padding-bottom: 2rem; padding-top:1rem;margin:auto}
-.dtc3-caro .carousel {height: 480px;margin-bottom: 0px; position:relative;  background-color: #F8F9FB; width: 70%; margin:auto}
-.dtc3-caro .carousel img{height: 450px;margin-bottom: 0px; position:relative;  background-color: #F8F9FB; width: auto; margin:auto}
+.use img{padding-left:17%; padding-right:17%; padding-bottom: 2rem; padding-top:1rem;margin:auto}
+.dtc3-caro .carousel {height: auto;margin-bottom: 0px; position:relative;  background-color: #F8F9FB; width: 70%; margin:auto}
+.dtc3-caro img{margin:auto}
 .dtc3-caro .carousel .carousel-control-prev{margin-left:10rem;}
 .dtc3-caro .carousel .carousel-control-next{margin-right:10rem;}
