@@ -130,7 +130,7 @@
  .text-primary{color:#1d809f!important}
  .text-secondary{color: rgba(135, 199, 232, 0.886)!important}
 
- .edc{min-height:30rem;position:relative; height:100%;padding-top:0; padding-bottom:8rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
+ .edc{min-height:10rem;position:relative; height:auto;padding-top:0; padding-bottom:1rem; background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); background-color:rgba(203, 227, 239, 0.9) ;background-position:center center;background-repeat:no-repeat;background-size:cover}
  .edc h1{text-align:left; padding-left:13%; padding-right:13%; padding-bottom:0; padding-top:0rem;font-weight:500; font-size:1.5rem}
  .edc h2{font-size:3.5rem;font-weight:700;display:block;max-width:30rem; text-align: left}
  .edc h4{max-width:100%; text-align:left; padding-left:13%; padding-right:13%; font-size:1rem; font-weight:400}
