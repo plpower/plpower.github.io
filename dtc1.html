@@ -20,6 +20,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="css/dtc1.css" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -31,7 +32,7 @@
     <!-- Navigation -->
     <a class="menu-toggle rounded" href="#">
             <i class="fas fa-bars"></i>
-        </a>
+    </a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
             <li class="sidebar-brand">
@@ -48,115 +49,54 @@
 
         <header class="d1masthead d-flex text-center">
           </header>
-      
-      <section class="dtc1-one bg-light" id="dtc1-one">
-            <div class="container-fluid text-align-left bg-light">
-              <h1 class="mb-3">Overview</h1>
-              <h4>Curl Coach is interactive software that processess raw EMG signals
-                into an attractive and comprehensive interface for use during physical therapy sessions.
-                The interface includes a muscle activation meter to display the EMG signal value, 
-                a strength goal to be set by the therapist, a star collector that rewards the patient for surpassing the target, 
-                and a data analysis system offering the therapist real time statistics on the session. </h4>
-              <div class="row-fluid text-center" id="curl">
-                <img class="img-fluid" src="img/howitworks.jpg" alt="Curl Coach interface" style="display: block">
-              </div>
-            </div>
-            
-      </section>
       <section class="dtc1 bg-light" id="dtc1">
+          <h2 class="mb-3">How can we help physical therapists track their patients' success?</h2>
           <div class="container-fluid text-align-left bg-light">
-                <h1 class="mb-3">The Client</h1>
                 <h4>Physical therapists at the Shirley Ryan AbilityLab expressed difficulty parsing the large
-                  amounts of raw data collected during therapy sessions when using EMG sensors. The therapists needed a clear
-                  visualization of the sensor data to track patient muscle progress in real time and easily convey the 
-                  information to the patients.
+amounts of raw data collected during therapy sessions when using EMG sensors. EMG sensors track a patient's muscle activation. This data is especailly useful for physical therapists and stroke survivors who are learning to regain control of their muscles.
                 </h4>
-                <img class="img-fluid" src="img/story.jpg" alt="4 Panel Story Board" style="display: block">
+                <img class="img-fluid" src="img/dtc1-rawemg.jpg" alt="Raw EMG data is displayed as a busy line graph" style="display: block">
+          </div>
+          <div class="container-fluid text-align-left bg-light">
+                <h2 class="mb-3">The Problem</h2>
+                <h4>Physical therapists wanted a clear visualization of EMG sensor data to track their patients' muscle progress in real time and easily convey that information to their patients without asking a doctor. However, a number of problems arose because raw EMG data is very difficult to read.</h4>
+                <div class="container-fluid text-center">
+                    <ul style="list-style-type:circle">
+                      <li>Physical therapists have to send the data to doctors to be analyzed. This can take days.</li>
+                      <li>Patients have no clear indidcation of their progress within the therapy session.</li>
+                      <li>The raw EMG data and lack of real time feedback is demotivating for patients and PTs.</li>
+                    </ul>
+                </div>
+                <img class="img-fluid" src="img/dtc1-before.jpg" alt="Frustrated PT and patient" style="display: block">
+          </div>
+          <div class="container-fluid text-align-left bg-light">
+            <h2 class="mb-3">Design Process</h2>
+            <h4>My team visited Shirley Ryan AbilityLab to interview patients, physical therapists, doctors, and observe a handful of physical therapy sessions. We then began the first round of brainstorming: an idea dump.</h4>
+            <img class="img-fluid" src="img/dtc1-brainstorm.jpg" alt="Brainstorming sketches" style="display: block; max-width:80%">
+            <h4>After more calls and interviews with the PTs at Shirley Ryan, team discussion, prototyping and sketching, we built a low fidelity prototype to test with users at Shirley Ryan.</h4>
+            <img class="img-fluid" src="img/dtc1-mockup.jpg" alt="Sketch of prototype" style="display: block; max-width:80%">
+            <h1 class="mb-3">"Patients get frustrated—they need to be distracted by something"</h1>
+            <h4 style="text-align:right">-Expert interview with PT, Jan 18</h4>
+            <h4>Our prototype was effective, but provided no visuals, a key component to keeping patients engaged and distracted from the difficulty of therapy session. So we started to think more about how we can make physical therapy engaging. Could we gamify PT sessions?</h4>
+            <h4>We experimented with many forms of data visualization: a pulsing orange circle, water filling a fishtank, a man ascending a mountain, and more.</h4>
+            <img class="img-fluid" src="img/dtc1-gamify.jpg" alt="Sketch of prototype" style="display: block; max-width:80%">
+            <h4 style="text-align:center; padding-bottom:0.5rem">Mockups of motivational EMG interface</h4>
+            <h4>Our client and test users found the gamification component to our interface critical. It receieved a lot of positive feedback. We had to be careful about not making the interface too "fun" which might obscure important data from the view of a physical therapist who cannot spend more than a few second glancing at the computer screen.</h4>
+          </div>
+          <div class="container-fluid text-align-left bg-light">
+            <h2 class="mb-3">Final Solution</h2>
+            <h4>The goal of this project was to assist physical therapists and patients in understanding real time data from physical therapy sessions which may increase efficiency and efficacy of therapy sessions. My team also hoped to decrease patient frustration due to the lack of real time progress results and increase the amount of EMG analysis that can be conducted by the physical therpaist during a PT session.</h4>
+            <img class="img-fluid" src="img/dtc1-after.jpg" alt="Happy PT and patient" style="display: block">
+            <h4>Curl Coach is interactive software that processess raw EMG signals into an attractive and comprehensive interface for use during physical therapy sessions. The interface includes a muscle activation meter to display the EMG signal value, a strength goal to be set by the therapist, a star collector that rewards the patient for surpassing the target, and a data analysis system offering the therapist real time statistics on the session. </h4>
+            <img class="img-fluid" src="img/dtc1-curlcoach.jpg" alt="Final interface" style="display: block">
+          </div>
+          <div class="container-fluid text-align-left bg-light">
+            <h4 style="text-align:center; padding-bottom:0.5rem">Curl Coach interface for physical therapists and patients</h4>
+            <h4><b>Bar Indicator:</b> The blue bar plot rises and falls with the patient's muscle activation—directly related to the strength of the EMG signal. The simplicity of this graph makes it easy for therapists to quickly gauge the patient's muscle activation level without turning away from the patient for long.</h4>
+            <h4><b>Target Line:</b> The red target line is a slider bar which can be adjusted by the physical therapist throughout the PT session. The target allows the patient and physcial therapist set a goal and observe the patient's progress. Muscle activation that exceeds this goal is saved to track how many times the patient reached his/her goal and for long long did the patient sustain muscle activation above the target.</h4>
+            <h4><b>Star Counter:</b> The bucket of stars serves as the main aspect of motivation for the patient. Stars are collected with each rep that exceeds the target line.</h4>
           </div>
       </section>
-      <section class="caro bg-light" id="caro">
-          <div class="container-fluid text-align-left bg-light">
-              <h1 class="mb-3">Additional Materials</h1>
-          </div>
-          <div class="drow-fluid">
-          <div class="dcolumn">
-              <p>Executive Summary
-              </p>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-                  <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  </ol>
-                  <div class="carousel-inner">
-                      <div class="carousel-item active">
-                      <img class="d-block w-100" src="img/esum1.jpg" alt="First slide">
-                      </div>
-                      <div class="carousel-item">
-                      <img class="d-block w-100" src="img/esum2.jpg" alt="Second slide">
-                      </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                  </a>
-                </div>
-                </div>
-                <div class="dcolumn">
-                    <p>Project Definition
-                      </p>
-                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="false">
-                          <ol class="carousel-indicators">
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="4"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="5"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="6"></li>
-                              <li data-target="#carouselExampleIndicators2" data-slide-to="7"></li>
-                          </ol>
-                          <div class="carousel-inner">
-                              <div class="carousel-item active">
-                              <img class="d-block w-100" src="img/pd1.jpg" alt="First page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd2.jpg" alt="Second page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd3.jpg" alt="Third page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd4.jpg" alt="Fourth page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd5.jpg" alt="Fifth page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd6.jpg" alt="Sixth page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd7.jpg" alt="Seventh page">
-                              </div>
-                              <div class="carousel-item">
-                              <img class="d-block w-100" src="img/pd8.jpg" alt="Eigth page">
-                              </div>
-                          </div>
-                          <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Previous</span>
-                          </a>
-                          <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="sr-only">Next</span>
-                          </a>
-                        </div>
-                        </div>
-                </div>
-        </section>
     </body>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
