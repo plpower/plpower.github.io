@@ -491,8 +491,8 @@ a:active,a:focus,a:hover{
     .emasthead h1{font-size:5.5rem}
 }
 .edc img{
-    padding-left:18%;
-    padding-right:18%;
+    /* padding-left:18%;
+    padding-right:18%; */
     padding-bottom:1rem;
     padding-top:2rem
 }
