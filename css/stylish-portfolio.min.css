@@ -300,7 +300,7 @@ h1,h2,h3,h4,h5,h6{
     background-color:rgba(0, 0, 0,.35);
     position:absolute;
     z-index:1;
-    -webkit-transition:-webkit-clip-path .25s ease-out,background-color .25s;
+    -webkit-transition: -webkit-clip-path .25s ease-out,background-color .25s;
     -webkit-clip-path:inset(-1px);
     clip-path:inset(-1px);
 }
@@ -357,7 +357,7 @@ footer.footer{padding-top:5rem;padding-bottom:5rem}
     height:4rem;width:4rem;
     line-height:4.3rem;
     font-size:1.5rem;
-    background-color:#1d809f;
+    background-color:rgba(203, 227, 239, 0.9);;
     -webkit-transition:background-color .15s ease-in-out;
     transition:background-color .15s ease-in-out;
     -webkit-box-shadow:0 3px 3px 0 rgba(0,0,0,.1);
@@ -365,7 +365,7 @@ footer.footer{padding-top:5rem;padding-bottom:5rem}
 }
 
 footer.footer .social-link:hover{
-    background-color:#155d74;
+    background-color:rgb(153,177,93);
     text-decoration:none
 }
 a{
