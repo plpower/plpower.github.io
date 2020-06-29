@@ -272,7 +272,7 @@ h1,h2,h3,h4,h5,h6{
 .row{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     margin-left: 0;
     margin-right: 0;
 }
@@ -283,7 +283,7 @@ h1,h2,h3,h4,h5,h6{
     overflow:hidden;
     max-width:350px;
     max-height:220px;
-    margin:auto 0.5rem 1rem;
+    margin:auto 0rem 1rem;
 }
 
 .portfolio-item1 .caption,
@@ -541,9 +541,8 @@ a:active,a:focus,a:hover{
     height:100%;
     padding-top:0;
     padding-bottom:8rem;
-    background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));
+    background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB);
     background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%);
-    background-color:#F8F9FB;
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover

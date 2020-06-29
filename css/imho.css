@@ -12,9 +12,9 @@
     height:80%;
     padding-top:0;
     padding-bottom:1rem;
-    background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));
-    background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%);
-    background-color:rgb(248,249,251);
+    /* background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB);
+    background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%); */
+    /* background-color:rgb(248,249,251); */
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover
@@ -29,20 +29,20 @@
     font-size:1rem
 }
 .imho h2{
-    text-align:center;
-    padding-left:13%;
-    padding-right:13%;
-    padding-bottom:1rem;
-    padding-top:1.5rem;
+    text-align:left;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom:0rem;
+    padding-top:3rem;
     font-weight:500;
-    font-size:1.5rem;
+    font-size:1.25rem;
     text-transform: uppercase;
 }
 .imho h4{
     max-width:100%;
     text-align:left;
-    padding-left:13%;
-    padding-right:13%;
+    padding-left:10%;
+    padding-right:10%;
     font-size:1rem;
     font-weight:400
 }
@@ -82,11 +82,11 @@
     height:10%;
     padding-top:7rem;
     padding-bottom:0rem;
-    background:-webkit-gradient(linear,left top,right top,from(#F8F9FB),to(#F8F9FB)),url(../img/imhoheader.jpg);
-    background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(../img/imhoheader.jpg);
+    background:-webkit-gradient(linear,left top,right top,from(#F8F9FB),to(#F8F9FB)),url(../img/imho/imho-header.png);
+    background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%),url(../img/imho/imho-header.png);
     background-position:center center;
     background-repeat:no-repeat;
-    background-size:cover
+    background-size:contain
 }
 .imhomasthead img{
     margin-left:auto;
@@ -94,7 +94,7 @@
 }
 
 @media (min-width:400px){
-    .imhomasthead{height:30vh}
+    .imhomasthead{height:50vh}
     .imhomasthead h1{font-size:5.5rem}
 }
 
@@ -105,9 +105,9 @@
     position:relative;
     padding-top:0;
     padding-bottom:0rem;
-    background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB));
+    background:-webkit-gradient(linear,left top,right top,from#F8F9FB),to(#F8F9FB);
     background:linear-gradient(90deg,rgba(255,255,255,.1) 0,rgba(255,255,255,.1) 100%);
-    background-color:rgba(203, 227, 239, 0.9);
+    /* background-color:rgba(203, 227, 239, 0.9); */
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover
