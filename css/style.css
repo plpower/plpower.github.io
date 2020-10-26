@@ -377,6 +377,10 @@ a:hover, a:active, a:focus {
   padding-top: 62px;
 }
 
+.col-md-12 .col-sm-12 {
+  text-align: left;
+}
+
 
 
 /*---------------------------------------
@@ -421,8 +425,13 @@ a:hover, a:active, a:focus {
   letter-spacing: 1px;
 }
 
-#single-project h3, h2, p {
+#single-project h2, p {
   text-align: left;
+}
+
+#single-project h3{
+  text-align: left;
+  padding-top: 15px;
 }
 
 #single-project h4 {
