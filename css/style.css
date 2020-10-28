@@ -551,18 +551,18 @@ a:hover, a:active, a:focus {
 }
 #watercolor .thumbnails img {
 	height: 80px;
-	border: 4px solid #555;
+	border: 2px solid #555;
 	padding: 1px;
 	margin: 0 10px 10px 0;
 }
 
 #watercolor .thumbnails img:hover {
-	border: 4px solid #00ccff;
+	border: 2px solid #00ccff;
 	cursor:pointer;
 }
 
 #watercolor .preview img {
-	border: 4px solid #444;
+	border: 2px solid #444;
 	padding: 1px;
 	height: 700px;
 }
