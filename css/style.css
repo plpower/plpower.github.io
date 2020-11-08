@@ -205,7 +205,9 @@ a:hover, a:active, a:focus {
 }
 
 .navbar-default .navbar-brand {
-  padding-top: 0px;
+  /* padding-top: 10px; */
+  position: relative;
+  top: 25%;
 }
 
 .navbar-default .navbar-brand .fa {
@@ -247,7 +249,7 @@ a:hover, a:active, a:focus {
 
 .navbar-default .navbar-toggle {
      border: none;
-     padding-top: 10px;
+     /* padding-top: 10px; */
   }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -551,7 +553,7 @@ a:hover, a:active, a:focus {
 }
 #watercolor .thumbnails img {
 	height: 80px;
-	border: 2px solid #555;
+	/* border: 2px solid #555; */
 	padding: 1px;
 	margin: 0 10px 10px 0;
 }
@@ -562,7 +564,7 @@ a:hover, a:active, a:focus {
 }
 
 #watercolor .preview img {
-	border: 2px solid #444;
+	/* border: 2px solid #444; */
 	padding: 1px;
 	height: 700px;
 }
@@ -745,7 +747,7 @@ a:hover, a:active, a:focus {
 
 footer {
     border-top: 1px solid #f0f0f0;
-    padding: 100px 0px;
+    padding: 30px 30px;
     position: relative;
 }
 
@@ -776,6 +778,10 @@ footer .footer-copyright {
    Social icon             
 -----------------------------------------*/
 
+.social {
+    color: #777;
+}
+
 .social-icon {
     position: relative;
     padding: 0;
@@ -797,7 +803,7 @@ footer .footer-copyright {
     text-align: center;
     vertical-align: middle;
     position: relative;
-    margin: 22px 12px 10px 12px;
+    /* margin: 22px 12px 10px 12px; */
 }
 
 .social-icon li a:hover {
