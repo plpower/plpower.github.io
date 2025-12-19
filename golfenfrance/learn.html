@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf en France</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --forest: #1B4332;
+            --sage: #52796F;
+            --cream: #F8F5F2;
+            --sand: #E8DCC8;
+            --burgundy: #9D5C63;
+            --charcoal: #2D3339;
+            --soft-white: #FEFEFE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--cream);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Subtle plaid pattern background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 49px, 
+                    rgba(27, 67, 50, 0.02) 49px, 
+                    rgba(27, 67, 50, 0.02) 51px
+                ),
+                repeating-linear-gradient(0deg, 
+                    transparent, 
+                    transparent 49px, 
+                    rgba(27, 67, 50, 0.02) 49px, 
+                    rgba(27, 67, 50, 0.02) 51px
+                ),
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 98px, 
+                    rgba(82, 121, 111, 0.03) 98px, 
+                    rgba(82, 121, 111, 0.03) 102px
+                ),
+                repeating-linear-gradient(0deg, 
+                    transparent, 
+                    transparent 98px, 
+                    rgba(82, 121, 111, 0.03) 98px, 
+                    rgba(82, 121, 111, 0.03) 102px
+                );
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3.5em;
+            margin-bottom: 8px;
+            color: var(--forest);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .header p {
+            font-size: 1.05em;
+            color: var(--sage);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .level-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .level-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--sage);
+            border-radius: 12px;
+            background: var(--soft-white);
+            color: var(--sage);
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--sage);
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .level-btn:hover::before {
+            left: 0;
+        }
+
+        .level-btn:hover {
+            color: var(--soft-white);
+            border-color: var(--sage);
+            transform: translateY(-2px);
+        }
+
+        .level-btn.active {
+            background: var(--forest);
+            color: var(--soft-white);
+            border-color: var(--forest);
+        }
+
+        .level-btn.active::before {
+            display: none;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            margin-bottom: 48px;
+        }
+
+        .flashcard {
+            width: 440px;
+            height: 560px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 48px;
+            box-shadow: 
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 4px 12px rgba(0, 0, 0, 0.06),
+                0 16px 32px rgba(27, 67, 50, 0.08);
+            border: 1px solid rgba(27, 67, 50, 0.08);
+        }
+
+        .card-front {
+            background: var(--soft-white);
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, var(--sand) 0%, var(--cream) 100%);
+            transform: rotateY(180deg);
+        }
+
+        .card-icon {
+            font-size: 128px;
+            margin-bottom: 32px;
+        }
+
+        .card-text {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.4em;
+            font-weight: 400;
+            color: var(--forest);
+            text-align: center;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .card-back .card-text {
+            color: var(--charcoal);
+        }
+
+        .card-pronunciation {
+            font-size: 1.1em;
+            color: var(--sage);
+            font-style: normal;
+            margin-top: 12px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            padding: 14px 32px;
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            background: var(--soft-white);
+            color: var(--forest);
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--forest);
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .nav-btn:hover:not(:disabled)::before {
+            left: 0;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            color: var(--soft-white);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: var(--sage);
+            color: var(--sage);
+        }
+
+        .nav-btn:disabled::before {
+            display: none;
+        }
+
+        .progress {
+            color: var(--charcoal);
+            font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .hint {
+            color: var(--sage);
+            text-align: center;
+            margin-top: 24px;
+            font-size: 0.95em;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .glossary-btn {
+            margin-top: 16px;
+            padding: 10px 20px;
+            border: 2px solid var(--sage);
+            border-radius: 12px;
+            background: var(--soft-white);
+            color: var(--sage);
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.02em;
+        }
+
+        .glossary-btn:hover {
+            background: var(--sage);
+            color: var(--soft-white);
+            transform: translateY(-2px);
+        }
+
+        .glossary-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .glossary-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .glossary-content {
+            background: var(--cream);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .glossary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            border-bottom: 2px solid var(--sage);
+            padding-bottom: 16px;
+        }
+
+        .glossary-header h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5em;
+            color: var(--forest);
+            font-weight: 400;
+        }
+
+        .close-btn {
+            background: var(--forest);
+            color: var(--soft-white);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: var(--burgundy);
+            transform: rotate(90deg);
+        }
+
+        .glossary-section {
+            margin-bottom: 32px;
+        }
+
+        .glossary-section h3 {
+            font-size: 1.3em;
+            color: var(--forest);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .glossary-item {
+            background: var(--soft-white);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(27, 67, 50, 0.1);
+            transition: all 0.2s;
+        }
+
+        .glossary-item:hover {
+            border-color: var(--sage);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(27, 67, 50, 0.1);
+        }
+
+        .glossary-item-icon {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+
+        .glossary-item-french {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2em;
+            color: var(--forest);
+            margin-bottom: 4px;
+        }
+
+        .glossary-item-english {
+            font-size: 0.9em;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .glossary-item-pronunciation {
+            font-size: 0.85em;
+            color: var(--sage);
+            font-style: italic;
+        }
+
+        @media (max-width: 500px) {
+            .glossary-content {
+                padding: 24px;
+            }
+
+            .glossary-header h2 {
+                font-size: 1.8em;
+            }
+
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 24px 16px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .header {
+                margin-bottom: 32px;
+            }
+
+            .level-selector {
+                margin-bottom: 32px;
+            }
+
+            .flashcard {
+                width: 90vw;
+                max-width: 380px;
+                height: 480px;
+            }
+
+            .card-face {
+                padding: 32px;
+            }
+
+            .card-icon {
+                font-size: 96px;
+                margin-bottom: 24px;
+            }
+
+            .card-text {
+                font-size: 1.8em;
+            }
+
+            .card-pronunciation {
+                font-size: 1em;
+            }
+
+            .navigation {
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .nav-btn {
+                padding: 12px 24px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⛳ Golf en France</h1>
+        <p>Learn golf vocabulary for your trip to France!</p>
+        <button class="glossary-btn" id="glossaryBtn">📖 View Glossary</button>
+    </div>
+
+    <div class="level-selector" id="levelSelector"></div>
+
+    <div class="card-container">
+        <div class="flashcard" id="flashcard">
+            <div class="card-face card-front" id="cardFront">
+                <div class="card-icon" id="iconFront"></div>
+                <div class="card-text" id="frenchText"></div>
+                <div class="card-pronunciation" id="pronunciation"></div>
+            </div>
+            <div class="card-face card-back" id="cardBack">
+                <div class="card-icon" id="iconBack"></div>
+                <div class="card-text" id="englishText"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn">← Previous</button>
+        <div class="progress" id="progress"></div>
+        <button class="nav-btn" id="nextBtn">Next →</button>
+    </div>
+
+    <div class="hint">Click the card to flip!</div>
+
+    <div class="glossary-modal" id="glossaryModal">
+        <div class="glossary-content">
+            <div class="glossary-header">
+                <h2>📖 Complete Glossary</h2>
+                <button class="close-btn" id="closeGlossary">×</button>
+            </div>
+            <div id="glossarySections"></div>
+        </div>
+    </div>
+
+    <script>
+        const flashcards = {
+            1: [ // Beginner - Basic Equipment
+                { french: "le golf", english: "golf", icon: "⛳", pronunciation: "luh golf" },
+                { french: "la balle", english: "ball", icon: "⚪", pronunciation: "lah bal" },
+                { french: "le club", english: "club", icon: "🏌️", pronunciation: "luh kloob" },
+                { french: "le tee", english: "tee", icon: "📍", pronunciation: "luh tee" },
+                { french: "le sac", english: "bag", icon: "🎒", pronunciation: "luh sak" },
+                { french: "les gant golf", english: "golf glove", icon: "🧤", pronunciation: "lay gahn gulf" },
+                { french: "le drapeau", english: "flag", icon: "🚩", pronunciation: "luh drah-poh" },
+                { french: "le trou", english: "hole", icon: "⭕", pronunciation: "luh troo" },
+                { french: "les chaussures", english: "shoes", icon: "👞", pronunciation: "lay show-sur" },
+                { french: "la voiturette", english: "golf cart", icon: "🚗", pronunciation: "lah vwa-tur-ett" },
+                { french: "le marqueur", english: "ball marker", icon: "🎯", pronunciation: "luh mar-kur" },
+                { french: "le parapluie", english: "umbrella", icon: "☂️", pronunciation: "luh pah-rah-ploo-ee" },
+                { french: "la serviette golf", english: "golf towel", icon: "🧻", pronunciation: "lah sair-vee-ett gulf" },
+                { french: "le chariot", english: "pull cart", icon: "🛒", pronunciation: "luh shar-ee-oh" },
+                { french: "un capuchon", english: "head cover", icon: "🧦", pronunciation: "ka pu shon" },
+                { french: "les droits de jeux", english: "greens fees", icon: "💵", pronunciation: "lay drwah duh zhuh" },
+                { french: "une motte de gazon", english: "divot", icon: "🪏", pronunciation: "oon mot duh gah zohn" }
+            ],
+            2: [ // Elementary - Course Features
+                { french: "le parcours", english: "course", icon: "🏞️", pronunciation: "luh par-koor" },
+                { french: "le green", english: "green", icon: "🟢", pronunciation: "luh green" },
+                { french: "le fairway", english: "fairway", icon: "🛤️", pronunciation: "luh fair-way" },
+                { french: "le rough", english: "rough", icon: "🌾", pronunciation: "luh ruff" },
+                { french: "le bunker", english: "bunker", icon: "⏳", pronunciation: "luh boon-kair" },
+                { french: "l'obstacle d'eau", english: "water hazard", icon: "💧", pronunciation: "lob-stah-kluh doh" },
+                { french: "le départ", english: "tee box", icon: "🎯", pronunciation: "luh day-par" },
+                { french: "le putting green", english: "putting green", icon: "🎱", pronunciation: "luh poot-ing green" },
+                { french: "le club-house", english: "clubhouse", icon: "🏠", pronunciation: "luh kloob owse" },
+                { french: "le practice", english: "driving range", icon: "🏹", pronunciation: "luh prak-teess" },
+                { french: "le chemin", english: "cart path", icon: "🛣️", pronunciation: "luh shuh-man" },
+                { french: "l'arbre", english: "tree", icon: "🌳", pronunciation: "lar-bruh" },
+                { french: "la pente", english: "slope", icon: "⛰️", pronunciation: "lah pahnt" },
+                { french: "le lac", english: "lake", icon: "🌊", pronunciation: "luh lak" },
+                { french: "le pont", english: "bridge", icon: "🌉", pronunciation: "luh pohn" },
+                { french: "la limite", english: "out of bounds", icon: "🚫", pronunciation: "lah lee-meet" }
+            ],
+            3: [ // Intermediate - Types of Clubs
+                { french: "le driver", english: "driver", icon: "🏌️‍♂️", pronunciation: "luh drai-vair" },
+                { french: "le bois", english: "wood", icon: "🪵", pronunciation: "luh bwah" },
+                { french: "le fer", english: "iron", icon: "🔨", pronunciation: "luh fair" },
+                { french: "le wedge", english: "wedge", icon: "⛏️", pronunciation: "luh wedge" },
+                { french: "le putter", english: "putter", icon: "🎯", pronunciation: "luh poot-air" },
+                { french: "le pitching wedge", english: "pitching wedge", icon: "⚒️", pronunciation: "luh pitch-ing wedge" },
+                { french: "le sand wedge", english: "sand wedge", icon: "🏖️", pronunciation: "luh sand wedge" },
+                { french: "le fer neuf", english: "nine iron", icon: "9️⃣", pronunciation: "luh fair nuhf" },
+                { french: "le fer sept", english: "seven iron", icon: "7️⃣", pronunciation: "luh fair set" },
+                { french: "le fer cinq", english: "five iron", icon: "5️⃣", pronunciation: "luh fair sank" },
+                { french: "le bois trois", english: "three wood", icon: "3️⃣", pronunciation: "luh bwah twa" },
+                { french: "le hybrid", english: "hybrid", icon: "🔀", pronunciation: "luh ee-breed" },
+                { french: "le lob wedge", english: "lob wedge", icon: "↗️", pronunciation: "luh lob wedge" },
+                { french: "le fer quatre", english: "four iron", icon: "4️⃣", pronunciation: "luh fair katr" },
+                { french: "le fer six", english: "six iron", icon: "6️⃣", pronunciation: "luh fair seess" },
+                { french: "le fer huit", english: "eight iron", icon: "8️⃣", pronunciation: "luh fair weet" }
+            ],
+            4: [ // Advanced - Actions & Shots
+                { french: "le swing", english: "swing", icon: "↪️", pronunciation: "luh swing" },
+                { french: "le putt", english: "putt", icon: "➡️", pronunciation: "luh putt" },
+                { french: "le chip", english: "chip", icon: "⤴️", pronunciation: "luh chip" },
+                { french: "le drive", english: "drive", icon: "🚀", pronunciation: "luh draiv" },
+                { french: "l'approche", english: "approach", icon: "🎯", pronunciation: "lah-prosh" },
+                { french: "le slice", english: "slice", icon: "↗️", pronunciation: "luh slice" },
+                { french: "le hook", english: "hook", icon: "↖️", pronunciation: "luh hook" },
+                { french: "oiselet", english: "birdie", icon: "🐦", pronunciation: "wah zuh lay" },
+                { french: "le bogey", english: "bogey", icon: "👻", pronunciation: "luh bo-gay" },
+                { french: "le par", english: "par", icon: "✅", pronunciation: "luh par" },
+                { french: "aigle", english: "eagle", icon: "🦅", pronunciation: "eg luh" },
+                { french: "le trou en un", english: "hole in one", icon: "🎊", pronunciation: "luh troo ahn uhn" },
+                { french: "le double bogey", english: "double bogey", icon: "👻👻", pronunciation: "luh doo-bluh bo-gay" },
+                { french: "le pitch", english: "pitch", icon: "⤴️", pronunciation: "luh peetch" },
+                { french: "le fade", english: "fade", icon: "↘️", pronunciation: "luh fade" },
+                { french: "le draw", english: "draw", icon: "↙️", pronunciation: "luh draw" }
+            ],
+            5: [ // Expert - Phrases & Etiquette
+                { french: "Bonne chance!", english: "Good luck!", icon: "🍀", pronunciation: "bon shahnss" },
+                { french: "Joli coup!", english: "Nice shot!", icon: "👏", pronunciation: "zho-lee koo" },
+                { french: "À vous de jouer", english: "Your turn", icon: "👉", pronunciation: "ah voo duh zhoo-ay" },
+                { french: "Puis-je passer?", english: "May I play through?", icon: "🚶", pronunciation: "pwee-zhuh pah-say" },
+                { french: "Combien de coups?", english: "How many strokes?", icon: "🔢", pronunciation: "kom-bee-an duh koo" },
+                { french: "Gardez le silence", english: "Keep quiet", icon: "🤫", pronunciation: "gar-day luh see-lahnss" },
+                { french: "Réparez vos divots", english: "Repair your divots", icon: "🔧", pronunciation: "ray-pah-ray voh dee-vo" },
+                { french: "Belle partie!", english: "Good game!", icon: "🎉", pronunciation: "bell par-tee" },
+                { french: "Quel est le score?", english: "What's the score?", icon: "📊", pronunciation: "kel ay luh skor" },
+                { french: "Allons-y!", english: "Let's go!", icon: "🏃", pronunciation: "ah-lon-zee" },
+                { french: "Attendez!", english: "Wait!", icon: "✋", pronunciation: "ah-tahn-day" },
+                { french: "Balle!", english: "Fore!", icon: "⚠️", pronunciation: "ball" },
+                { french: "Désolé", english: "Sorry", icon: "🙏", pronunciation: "day-zo-lay" },
+                { french: "Bien joué!", english: "Well played!", icon: "💪", pronunciation: "bee-an zhoo-ay" },
+                { french: "Quelle distance?", english: "What's the distance?", icon: "📏", pronunciation: "kel dee-stahnss" },
+                { french: "Bon swing!", english: "Nice swing!", icon: "🏌️", pronunciation: "bon swing" }
+            ]
+        };
+
+        let currentLevel = 1;
+        let currentCardIndex = 0;
+        let isFlipped = false;
+
+        const flashcard = document.getElementById('flashcard');
+        const levelSelector = document.getElementById('levelSelector');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progress = document.getElementById('progress');
+
+        // Create level buttons
+        for (let i = 1; i <= 5; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'level-btn';
+            btn.textContent = `Level ${i}`;
+            if (i === 1) btn.classList.add('active');
+            btn.addEventListener('click', () => selectLevel(i));
+            levelSelector.appendChild(btn);
+        }
+
+        function selectLevel(level) {
+            currentLevel = level;
+            currentCardIndex = 0;
+            isFlipped = false;
+            
+            // Update active button
+            document.querySelectorAll('.level-btn').forEach((btn, index) => {
+                btn.classList.toggle('active', index + 1 === level);
+            });
+            
+            updateCard();
+        }
+
+        function updateCard() {
+            const cards = flashcards[currentLevel];
+            const card = cards[currentCardIndex];
+            
+            // Reset flip state
+            flashcard.classList.remove('flipped');
+            isFlipped = false;
+            
+            // Update content
+            document.getElementById('iconFront').textContent = card.icon;
+            document.getElementById('iconBack').textContent = card.icon;
+            document.getElementById('frenchText').textContent = card.french;
+            document.getElementById('pronunciation').textContent = card.pronunciation;
+            document.getElementById('englishText').textContent = card.english;
+            
+            // Update progress
+            progress.textContent = `${currentCardIndex + 1} / ${cards.length}`;
+            
+            // Update buttons
+            prevBtn.disabled = currentCardIndex === 0;
+            nextBtn.disabled = currentCardIndex === cards.length - 1;
+        }
+
+        flashcard.addEventListener('click', () => {
+            flashcard.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                updateCard();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const cards = flashcards[currentLevel];
+            if (currentCardIndex < cards.length - 1) {
+                currentCardIndex++;
+                updateCard();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+            if (e.key === ' ') {
+                e.preventDefault();
+                flashcard.click();
+            }
+        });
+
+        // Glossary functionality
+        const glossaryModal = document.getElementById('glossaryModal');
+        const glossaryBtn = document.getElementById('glossaryBtn');
+        const closeGlossary = document.getElementById('closeGlossary');
+        const glossarySections = document.getElementById('glossarySections');
+
+        const levelNames = {
+            1: "Beginner - Basic Equipment",
+            2: "Elementary - Course Features",
+            3: "Intermediate - Types of Clubs",
+            4: "Advanced - Actions & Shots",
+            5: "Expert - Phrases & Etiquette"
+        };
+
+        function populateGlossary() {
+            glossarySections.innerHTML = '';
+            
+            for (let level = 1; level <= 5; level++) {
+                const section = document.createElement('div');
+                section.className = 'glossary-section';
+                
+                const heading = document.createElement('h3');
+                heading.textContent = `Level ${level}: ${levelNames[level]}`;
+                section.appendChild(heading);
+                
+                const grid = document.createElement('div');
+                grid.className = 'glossary-grid';
+                
+                flashcards[level].forEach(card => {
+                    const item = document.createElement('div');
+                    item.className = 'glossary-item';
+                    item.innerHTML = `
+                        <div class="glossary-item-icon">${card.icon}</div>
+                        <div class="glossary-item-french">${card.french}</div>
+                        <div class="glossary-item-english">${card.english}</div>
+                        <div class="glossary-item-pronunciation">${card.pronunciation}</div>
+                    `;
+                    grid.appendChild(item);
+                });
+                
+                section.appendChild(grid);
+                glossarySections.appendChild(section);
+            }
+        }
+
+        glossaryBtn.addEventListener('click', () => {
+            populateGlossary();
+            glossaryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeGlossary.addEventListener('click', () => {
+            glossaryModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        glossaryModal.addEventListener('click', (e) => {
+            if (e.target === glossaryModal) {
+                glossaryModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close glossary with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && glossaryModal.classList.contains('active')) {
+                glossaryModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Initialize
+        updateCard();
+    </script>
+</body>
+</html>
