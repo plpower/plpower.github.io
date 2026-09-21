@@ -1,265 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Patrice Power — MBA candidate at Harvard Business School, software engineer, and product builder.">
+  <title>Patrice Power</title>
 
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-     <title>Patrice Power</title>
-
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-
-     <!-- Main css -->
-     <link rel="stylesheet" href="css/style.css">
-     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
-
-     <!-- Favicon -->
-     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-
 <body>
 
-     <!-- PRE LOADER -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="brand">Patrice Power</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#work" class="active">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-     <div class="preloader">
-          <div class="sk-spinner sk-spinner-wordpress">
-               <span class="sk-inner-circle"></span>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <!-- <span class="eyebrow">MBA Candidate, Harvard Business School &middot; Class of 2028</span> -->
+        <h1 class="hero-headline"><span class="hero-greeting">Hi, I'm Patrice.</span> Problem finder &amp; problem solver.</h1>
+        <!-- <p class="lede">I build things end to end &mdash; writing the code, designing the experience, and shaping the strategy behind it. I'm at HBS exploring where that combination fits best, and building <a href="work/keeper.html" style="color:var(--accent); text-decoration: underline;">Keeper</a> on the side.</p> -->
+        <p>Currently exploring AI, fraud, and product strategy while pursuing my MBA at Harvard Business School.</p>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-shape"></div>
+        <img src="images/patrice-ski.jpg" alt="Patrice Power skiing">
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Projects I've built, designed, and led</h2>
+      </div>
+
+      <div class="work-grid">
+
+        <a href="work/keeper.html" class="work-card">
+          <span class="work-index">01</span>
+          <div class="work-thumb">
+            <div class="phone-frame-wrap duo">
+              <div class="phone-frame"><img src="images/keeper/screenshot-detail.png" alt="Keeper salon detail screenshot"></div>
+              <div class="phone-frame"><img src="images/keeper/screenshot-home.png" alt="Keeper home feed screenshot"></div>
+            </div>
           </div>
-     </div>
-
-     <!-- Navigation section  -->
-
-     <div class="navbar navbar-default navbar-static-top" role="navigation">
-          <div class="container">
-
-               <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                    </button>
-                    <a href="index.html" class="navbar-brand"><b>PATRICE POWER</b></a>
-               </div>
-               <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                         <li class="active"><a href="index.html">projects</a></li>
-                         <li><a href="about.html">who i am</a></li>
-                         <li><a href="watercolor.html">just for fun</a></li>
-                    </ul>
-               </div>
-
+          <div class="work-card-body">
+            <div class="work-card-meta">Founder &amp; Builder &middot; 2026&ndash;Present</div>
+            <h3>Keeper <span class="tag-live">Live</span></h3>
+            <p>A recommendations app built around social trust. Starting with hair salons and stylists.</p>
+            <span class="link-arrow">View project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
           </div>
-     </div>
+        </a>
 
-     <!-- Home Section -->
-
-     <section id="home">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-offset-1 col-md-10 col-sm-12">
-                         <h1>Hi, I'm Patrice</h1>
-                         <h2>
-                              I'm a <b>solutions engineer</b> with years of experience in custom app building, API architecture, and user experience design. I intend to spend my
-                              career building
-                              brilliant <b>user experiences</b> for products and services.
-                         </h2>
-                         <hr>
-                    </div>
-
-               </div>
+        <a href="work/aeropay.html" class="work-card">
+          <span class="work-index">02</span>
+          <div class="work-thumb" style="display:flex; align-items:center; justify-content:center; background:var(--accent-soft);">
+            <img src="images/aeropay-logo.svg" alt="Aeropay logo" style="width:60%; height:auto; display:block;">
           </div>
-     </section>
-
-     <!-- Portfolio Section -->
-
-     <section id="portfolio">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/golfenfrance.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/golf-logo.png" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Golf en France</h3>
-                                             <small>Language Learning App</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/taskfull.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/taskfull-tablet-header.png" class="img-responsive"
-                                        alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Taskfull</h3>
-                                             <small>Web App</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/clickncook.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/clickncook-grey.png" class="img-responsive"
-                                        alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Click 'n Cook</h3>
-                                             <small>Product Design</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/edc.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/edc-light.png" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Evanston Development Cooperative</h3>
-                                             <small>Brand Identity & Web Dev</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/fnf.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/vnn-logo.png" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Viet Nom Nom</h3>
-                                             <small>Fyler Design</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/letmeask.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/letmeask-no-phone.png" class="img-responsive"
-                                        alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>LetMeAsk</h3>
-                                             <small>Mobile App</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/curlcoach.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/curlcoach-logo.png" class="img-responsive"
-                                        alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Curl Coach</h3>
-                                             <small>UX/UI</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/inmyhumble.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/inmyhumble.png" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>In My Humble Opinion</h3>
-                                             <small>Podcast</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/vegan.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/veggies-logo.png" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Explaining Veganism</h3>
-                                             <small>Information Visualization</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <a href="projects/friendsy.html">
-                              <div class="portfolio-thumb">
-                                   <img src="images/portfolio/friendsy.png" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Friendsy</h3>
-                                             <small>HCI Design Project</small>
-                                        </div>
-                                   </div>
-                              </div>
-                         </a>
-                    </div>
-
-               </div>
+          <div class="work-card-body">
+            <div class="work-card-meta">Director of Solutions Engineering &middot; 2023&ndash;2026</div>
+            <h3>Aeropay</h3>
+            <p>Three years in solutions engineering at a Chicago fintech, from individual contributor to director.</p>
+            <span class="link-arrow">View project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
           </div>
-     </section>
+        </a>
 
-     <!-- Footer Section -->
-
-     <footer>
-          <div class="container">
-               <div class="row">
-
-                    <div class="text-center social">
-                         <a href='mailto:patricelouisepower@gmail.com'><i class="fa fa-envelope-o"
-                                   style="font-size:36px; padding-left:40px; padding-right:40px;"></i></a>
-                         <a href='https://github.com/plpower'><i class="fa fa-github"
-                                   style="font-size: 36px; padding-left:40px; padding-right:40px;"></i></a>
-                         <a href='https://www.linkedin.com/in/patrice-power/'><i class="fa fa-linkedin"
-                                   style="font-size: 36px; padding-left:40px; padding-right:40px;"></i></a>
-                    </div>
-
-               </div>
+        <a href="work/product-design.html" class="work-card">
+          <span class="work-index">03</span>
+          <div class="work-thumb"><img src="images/portfolio/clickncook-grey.png" alt="Click 'n Cook product photo"></div>
+          <div class="work-card-body">
+            <div class="work-card-meta">Product Design &middot; 2018</div>
+            <h3>Product Design</h3>
+            <p>Three projects from my design coursework: Click 'n Cook, Curl Coach, and Viet Nom Nom.</p>
+            <span class="link-arrow">View project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
           </div>
-     </footer>
+        </a>
 
-     <!-- SCRIPTS -->
+        <a href="https://substack.com/@patricepower" target="_blank" rel="noopener" class="work-card">
+          <span class="work-index">04</span>
+          <div class="work-thumb" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; background:var(--accent-soft);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" style="color:var(--accent);"><path d="M22 6H2v3h20V6zM2 11v10l10-6 10 6V11H2z"/></svg>
+            <span style="font-family:var(--serif); font-style:italic; font-size:24px; color:var(--accent);">Substack</span>
+          </div>
+          <div class="work-card-body">
+            <div class="work-card-meta">Writing</div>
+            <h3>Substack</h3>
+            <p>Notes on trust and verification in agentic systems. Where AI, payments, and security collide.</p>
+            <span class="link-arrow">Read on Substack
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5"/><path d="M19 5l-9 9"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
+            </span>
+          </div>
+        </a>
 
-     <script src="js/jquery.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/custom.js"></script>
+      </div>
 
+      <div class="section-head" style="margin-top:64px;">
+        <span class="eyebrow">Extracurriculars</span>
+      </div>
+
+      <div class="work-grid">
+
+        <a href="work/art.html" class="work-card">
+          <span class="work-index">05</span>
+          <div class="work-thumb"><img src="images/watercolor/golden-retriever.jpg" alt="Watercolor portrait of a golden retriever wrapped in a towel"></div>
+          <div class="work-card-body">
+            <div class="work-card-meta">Art</div>
+            <h3>Watercolor</h3>
+            <p>Hand-painted cards and prints.</p>
+            <span class="link-arrow">View project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="work/baking.html" class="work-card">
+          <span class="work-index">06</span>
+          <div class="work-thumb"><img src="images/baking/bagels-best.jpg" alt="Two finished sesame bagels on a wooden board"></div>
+          <div class="work-card-body">
+            <div class="work-card-meta">Baking</div>
+            <h3>Perfecting the Bagel</h3>
+            <p>My ongoing kitchen experiment to make my favorite bagel.</p>
+            <span class="link-arrow">View project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about-teaser">
+    <div class="container">
+      <img src="images/patrice-headshot.jpg" alt="Patrice Power">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>A bit about my path</h2>
+        <p>I'm an explorer and creator at heart. At HBS, I'm exploring the world of emerging tech across engineering, design, and strategy.</p>
+        <ul class="facts">
+          <li><strong>Harvard Business School</strong> &mdash; MBA Candidate, Class of 2028</li>
+          <li><strong>Aeropay</strong> &mdash; Director of Solutions Engineering, 2023&ndash;2026</li>
+          <li><strong>IBM</strong> &mdash; Experience Developer, 2021&ndash;2023</li>
+          <li><strong>Northwestern University</strong> &mdash; B.S. Computer Science, 2021</li>
+        </ul>
+        <div class="btn-row" style="margin-top:28px;">
+          <a href="about.html" class="link-arrow">More about me
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Exploring product, strategy, and operations.</h2>
+      <p class="lede">I'm looking for full-time opportunities after HBS, and internships along the way. If something seems like a fit, I'd love to hear from you.</p>
+      <div class="contact-links">
+        <a href="mailto:patricelouisepower@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+          patricelouisepower@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/patrice-power/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/plpower" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <div class="site-footer">&copy; 2026 Patrice Power</div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
 </body>
-
 </html>
