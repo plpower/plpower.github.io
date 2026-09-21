@@ -12,8 +12,12 @@
   --ink-soft: #444444;
   --ink-faint: #777777;
   --accent: #2f4a3d;
-  --accent-soft: #e4e9e1;
+  --accent-soft: var(--pale-pink);
   --accent-ink: #ffffff;
+  --raspberry: #b6355e;
+  --pale-pink: #f4dbe3;
+  --green-soft: #e4e9e1;
+  --blue-soft: #dfe9f4;
   --line: #e5e5e5;
   --radius: 16px;
   --radius-sm: 8px;
@@ -290,10 +294,19 @@ p {
 
 .hero-photo-shape {
   position: absolute;
-  inset: 20px -20px -20px 20px;
-  background: var(--accent);
+  inset: 32px -32px -32px 32px;
+  background: var(--pale-pink);
   border-radius: var(--radius);
-  transform: rotate(-4deg);
+  transform: rotate(-7deg);
+  z-index: 0;
+}
+
+.hero-photo-shape-2 {
+  position: absolute;
+  inset: 16px -16px -16px 16px;
+  background: var(--raspberry);
+  border-radius: var(--radius);
+  transform: rotate(-3deg);
   z-index: 0;
 }
 
@@ -394,7 +407,7 @@ p {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: var(--accent-soft);
+  background: var(--blue-soft);
 }
 
 .phone-frame {
